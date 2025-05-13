@@ -104,7 +104,7 @@ npm start
 ### Backend (.env)
 
 ```
-PORT=5000
+PORT=3000
 MONGODB_URI=mongodb://localhost:27017/cms_mini
 JWT_SECRET=your_jwt_secret
 CLOUDINARY_CLOUD_NAME=your_cloud_name
@@ -115,10 +115,11 @@ CLOUDINARY_API_SECRET=your_api_secret
 ### Frontend (.env)
 
 ```
-REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_API_URL=http://localhost:3000/api
 ```
 
 ## Đóng Góp
+
 Võ Duy Bảo Khánh
 
 Nếu bạn muốn đóng góp vào dự án, vui lòng tạo một pull request hoặc báo cáo các vấn đề tại mục Issues.

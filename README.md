@@ -1,129 +1,133 @@
-# CMS Mini - Hệ Thống Quản Lý Nội Dung
+# CMS Mini
 
-CMS Mini là một hệ thống quản lý nội dung đơn giản được xây dựng với kiến trúc phân tách giữa Backend và Frontend.
+A modern, lightweight Content Management System built with Next.js 14, TypeScript, MongoDB, and Tailwind CSS.
 
-## Cấu Trúc Dự Án
+## Features
 
-Dự án được chia thành hai phần chính:
+- 🔐 Authentication with NextAuth.js
+- 📝 Rich text editor with React Quill
+- 🖼️ Image upload with Cloudinary
+- 📱 Responsive design with Tailwind CSS
+- 🔒 Role-based access control
+- 📊 Dashboard with statistics
+- 📄 Blog post management
+- 📑 Category management
+- 👥 User management
+- 🔍 SEO friendly
 
-```
-CMS_mini/
-├── BE/                 # Backend
-│   ├── controllers/    # Xử lý logic nghiệp vụ
-│   ├── middlewares/    # Middleware xác thực và xử lý request
-│   ├── models/         # Mô hình dữ liệu MongoDB
-│   ├── routes/         # Định nghĩa API endpoints
-│   ├── uploads/        # Thư mục lưu trữ file upload
-│   ├── index.js        # Điểm khởi đầu ứng dụng Backend
-│   └── package.json    # Cấu hình và dependencies Backend
-│
-└── FE/                 # Frontend
-    └── package.json    # Cấu hình và dependencies Frontend
-```
+## Tech Stack
 
-## Công Nghệ Sử Dụng
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Database:** MongoDB
+- **Authentication:** NextAuth.js
+- **Styling:** Tailwind CSS
+- **Rich Text Editor:** React Quill
+- **Image Upload:** Cloudinary
+- **State Management:** SWR
+- **Icons:** Heroicons
 
-### Backend (BE)
+## Prerequisites
 
-- **Node.js** với **Express** framework
-- **MongoDB** với **Mongoose** ORM
-- **JWT** (JSON Web Token) cho xác thực
-- **Bcrypt** để mã hóa mật khẩu
-- **Multer** để xử lý upload file
-- **Cloudinary** để lưu trữ và quản lý hình ảnh
-- **Slugify** để tạo URL thân thiện
+- Node.js 18.x or later
+- MongoDB
+- Cloudinary account
 
-### Frontend (FE)
+## Environment Variables
 
-- **React** với **React Router** cho điều hướng
-- **Axios** để gọi API
-- **React Quill** cho trình soạn thảo văn bản phong phú
-- **Slugify** để tạo URL thân thiện
+Create a `.env.local` file in the root directory with the following variables:
 
-## Cài Đặt và Chạy Dự Án
+```env
+# MongoDB
+MONGODB_URI=your_mongodb_uri
 
-### Yêu Cầu Hệ Thống
+# NextAuth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
 
-- Node.js (phiên bản 14.x trở lên)
-- MongoDB (phiên bản 4.x trở lên)
-
-### Cài Đặt Backend
-
-```bash
-cd BE
-npm install
-```
-
-### Cài Đặt Frontend
-
-```bash
-cd FE
-npm install
-```
-
-### Chạy Backend
-
-```bash
-cd BE
-npm run dev  # Chạy với nodemon (phát triển)
-# hoặc
-npm start    # Chạy với node
-```
-
-### Chạy Frontend
-
-```bash
-cd FE
-npm start
-```
-
-## Tính Năng Chính
-
-1. **Quản lý người dùng**
-
-   - Đăng ký, đăng nhập, quản lý thông tin cá nhân
-   - Phân quyền người dùng (Admin, Editor, User)
-
-2. **Quản lý nội dung**
-
-   - Tạo, chỉnh sửa, xóa bài viết
-   - Hỗ trợ trình soạn thảo văn bản phong phú
-   - Upload và quản lý hình ảnh
-
-3. **Phân loại và tìm kiếm**
-
-   - Phân loại bài viết theo danh mục
-   - Tìm kiếm bài viết
-
-4. **Quản lý file**
-   - Upload và quản lý file
-   - Tích hợp với Cloudinary để lưu trữ hình ảnh
-
-## Cấu Hình Môi Trường
-
-### Backend (.env)
-
-```
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/cms_mini
-JWT_SECRET=your_jwt_secret
+# Cloudinary
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 ```
 
-### Frontend (.env)
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/cms-mini.git
+cd cms-mini
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+The application will be available at [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
 
 ```
-REACT_APP_API_URL=http://localhost:3000/api
+src/
+├── app/                 # Next.js app directory
+│   ├── api/            # API routes
+│   ├── auth/           # Authentication pages
+│   ├── dashboard/      # Dashboard pages
+│   └── admin/          # Admin pages
+├── components/         # React components
+├── config/            # Configuration files
+├── constants/         # Constants and enums
+├── lib/              # Utility libraries
+├── models/           # MongoDB models
+├── types/            # TypeScript types
+└── utils/            # Utility functions
 ```
 
-## Đóng Góp
+## Available Scripts
 
-Võ Duy Bảo Khánh
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
 
-Nếu bạn muốn đóng góp vào dự án, vui lòng tạo một pull request hoặc báo cáo các vấn đề tại mục Issues.
+## Default Users
 
-## Giấy Phép
+After first run, create an admin user with the following credentials:
 
-Dự án này được phân phối dưới giấy phép MIT.
+- Email: admin@example.com
+- Password: admin123
+
+## API Routes
+
+- `POST /api/auth/signin` - Sign in
+- `POST /api/auth/signup` - Sign up
+- `GET /api/posts` - Get all posts
+- `POST /api/posts` - Create a post
+- `GET /api/categories` - Get all categories
+- `POST /api/categories` - Create a category
+- `GET /api/users` - Get all users (admin only)
+- `POST /api/users` - Create a user (admin only)
+- `POST /api/upload` - Upload an image
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you have any questions or need help, please open an issue in the GitHub repository.

@@ -126,4 +126,4 @@ Nếu bạn muốn đóng góp vào dự án, vui lòng tạo một pull request
 
 ## Giấy Phép
 
-Dự án này được phân phối dưới giấy phép ISC.
+Dự án này được phân phối dưới giấy phép MIT.
